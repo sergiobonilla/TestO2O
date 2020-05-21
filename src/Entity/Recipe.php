@@ -23,7 +23,7 @@ class Recipe
 	private $name;
 
 	/**
-	 * @ORM\Column(type="string", length=200)
+	 * @ORM\Column(type="string", length=900)
 	 */
 	private $description;
 
