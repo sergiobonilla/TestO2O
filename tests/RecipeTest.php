@@ -15,7 +15,10 @@ class RecipeTest extends WebTestCase
 		$this->assertTrue($client->getResponse()->headers->contains('Content-Type', 'application/json'));
 
 		$content = json_decode($client->getResponse()->getContent());
-		$this->assertEquals(1, count($content));
+		$this->assertEquals(true, isset($content[0]->id));
+		$this->assertEquals(1, $content[0]->id);
+		$this->assertEquals(true, isset($content[0]->name));
+		$this->assertEquals('Quesillo venezolano', $content[0]->name);
 
 		$client->request('GET', '/api/v1/search/food/');
 		$this->assertEquals(200, $client->getResponse()->getStatusCode());
