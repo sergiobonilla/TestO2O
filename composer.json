@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
+        "ext-openssl": "*",
         "bshaffer/oauth2-server-php": "^1.10",
         "friendsofsymfony/rest-bundle": "^2.5",
         "symfony/console": "4.2.*",
@@ -15,8 +16,7 @@
         "symfony/orm-pack": "^1.0",
         "symfony/security-bundle": "4.2.*",
         "symfony/serializer-pack": "*",
-        "symfony/yaml": "4.2.*",
-        "ext-openssl": "*"
+        "symfony/yaml": "4.2.*"
     },
     "require-dev": {
         "symfony/var-dumper": "4.2.*"
