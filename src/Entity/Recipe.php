@@ -3,43 +3,48 @@
 namespace App\Entity;
 
 use DateTime;
-use JsonSerializable;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RecipeRepository")
  */
-class Recipe implements JsonSerializable
+class Recipe
 {
 	/**
 	 * @ORM\Id
 	 * @ORM\GeneratedValue
 	 * @ORM\Column(type="integer")
+	 * @Groups({"base", "extended"})
 	 */
 	private $id;
 
 	/**
 	 * @ORM\Column(type="string", length=200)
+	 * @Groups({"base", "extended"})
 	 */
 	private $name;
 
 	/**
 	 * @ORM\Column(type="string", length=900)
+	 * @Groups({"base", "extended"})
 	 */
 	private $description;
 
 	/**
 	 * @ORM\Column(type="string", length=300, nullable=true)
+	 * @Groups({"extended"})
 	 */
 	private $image;
 
 	/**
 	 * @ORM\Column(type="string", length=300, nullable=true)
+	 * @Groups({"extended"})
 	 */
 	private $tagLine;
 
 	/**
 	 * @ORM\Column(type="datetime", nullable=true)
+	 * @Groups({"extended"})
 	 */
 	private $firstBrewed;
 
@@ -132,14 +137,5 @@ class Recipe implements JsonSerializable
 	{
 		$this->updated = $updated;
 		return $this;
-	}
-
-	public function jsonSerialize()
-	{
-		return array(
-			'id'          => $this->id,
-			'name'        => $this->name,
-			'description' => $this->description
-		);
 	}
 }
