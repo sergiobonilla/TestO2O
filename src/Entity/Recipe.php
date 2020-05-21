@@ -29,6 +29,21 @@ class Recipe implements JsonSerializable
 	private $description;
 
 	/**
+	 * @ORM\Column(type="string", length=300, nullable=true)
+	 */
+	private $image;
+
+	/**
+	 * @ORM\Column(type="string", length=300, nullable=true)
+	 */
+	private $tagLine;
+
+	/**
+	 * @ORM\Column(type="datetime", nullable=true)
+	 */
+	private $firstBrewed;
+
+	/**
 	 * @ORM\Column(type="datetime")
 	 */
 	private $created;
@@ -67,6 +82,39 @@ class Recipe implements JsonSerializable
 	public function setDescription (string $description) : Recipe
 	{
 		$this->description = $description;
+		return $this;
+	}
+
+	public function getImage () : string
+	{
+		return $this->image;
+	}
+
+	public function setImage (string $image) : Recipe
+	{
+		$this->image = $image;
+		return $this;
+	}
+
+	public function getTagLine () : string
+	{
+		return $this->tagLine;
+	}
+
+	public function setTagLine (string $tagLine) : Recipe
+	{
+		$this->tagLine = $tagLine;
+		return $this;
+	}
+
+	public function getFirstBrewed ()
+	{
+		return $this->firstBrewed;
+	}
+
+	public function setFirstBrewed (DateTime $firstBrewed) : Recipe
+	{
+		$this->firstBrewed = $firstBrewed;
 		return $this;
 	}
 
