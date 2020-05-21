@@ -1,5 +1,20 @@
 <?php
 
+/* TODO That configuration should be done on the server side, but I will do here for dev purpose */
+header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Max-Age: 60");
+header("Access-Control-Allow-Headers: X-AUTH-TOKEN, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+date_default_timezone_set('Europe/Madrid');
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+	exit();
+}
+/* --------------------------------------------------------------------------------------------- */
+
+
 use App\Kernel;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
