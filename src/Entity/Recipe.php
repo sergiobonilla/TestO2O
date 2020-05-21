@@ -3,12 +3,13 @@
 namespace App\Entity;
 
 use DateTime;
+use JsonSerializable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RecipeRepository")
  */
-class Recipe
+class Recipe implements JsonSerializable
 {
 	/**
 	 * @ORM\Id
